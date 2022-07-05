@@ -1,16 +1,20 @@
 import ctypes
 import time
-
+from pynput.mouse import Button, Controller
 
 SendInput = ctypes.windll.user32.SendInput
 
-W = 0x1F
+S = 0x1F
 A = 0x1E
-S = 0x11
+W = 0x11
 D = 0x20
+E = 0x12
+Q = 0x10
 SPACE = 0x39
 SHIFT = 0x2A
 CTRL = 0x1D
+LEFTCLICK = Button.left
+RIGHTCLICK = Button.right
 
 # C struct redefinitions
 PUL = ctypes.POINTER(ctypes.c_ulong)
@@ -60,7 +64,6 @@ def PressKey(hexKeyCode):
     ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
 
-
 def ReleaseKey(hexKeyCode):
     extra = ctypes.c_ulong(0)
     ii_ = Input_I()
@@ -68,3 +71,18 @@ def ReleaseKey(hexKeyCode):
     x = Input(ctypes.c_ulong(1), ii_)
     ctypes.windll.user32.SendInput(1, ctypes.pointer(x), ctypes.sizeof(x))
 
+
+def spam_click(key, times):
+    mouse = Controller()
+    # Press and release
+    for i in range(times):
+        mouse.press(key)
+        mouse.release(key)
+
+
+def hold_click(key, times):
+    mouse = Controller()
+    # Press and release
+    mouse.press(key)
+    time.sleep(times)
+    mouse.release(key)

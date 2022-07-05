@@ -1,9 +1,8 @@
 import os
-import time
 import ctypes
+import time
 from twitchio.ext import commands
 from Inputs import *
-
 
 
 class Bot_FG(commands.Bot):
@@ -61,12 +60,12 @@ class Bot_FG(commands.Bot):
                 self.hold_key(SPACE, 0.1, message)
             elif mensaje == 'dive':
                 self.hold_key(CTRL, 0.8, message)
-            elif mensaje == 'agarra':
+            elif mensaje == 'agarrar':
                 self.hold_key(SHIFT, 0.8, message)
             elif mensaje == 'ade':
-                self.hold_key(W, 0.8, message)
-            elif mensaje == 'atra':
-                self.hold_key(S, 0.25, message)
+                self.hold_key(S, 0.8, message)
+            elif mensaje == 'atras':
+                self.hold_key(W, 0.25, message)
         self.same_name = False
 
         # Since we have commands and are overriding the default `event_message`
@@ -91,10 +90,10 @@ class Bot_FG(commands.Bot):
         IZQ: moverme a la izquierda (move right) ________ 
         DER: moverme a la derecha (move left) _________ 
         ADE: Moverme adelante (forward) ______________ 
-        ATRA: Moverme atras (backward) ______________ 
+        ATRAS: Moverme atras (backward) ______________ 
         SALTA: Salto (jump) ____________________________ 
         DIVE: Salto hacia adelante (dive) _______________ 
-        AGARRA: Agarro al que tengo en frente (grab)\n''')
+        AGARRAR: Agarro al que tengo en frente (grab)\n''')
 
     @commands.command()
     async def croquetas(self, ctx: commands.Context):
