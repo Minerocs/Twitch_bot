@@ -64,7 +64,7 @@ class Bot_FG(commands.Bot):
                 self.hold_key(SHIFT, 0.8, message)
             elif mensaje == 'ade':
                 self.hold_key(S, 0.8, message)
-            elif mensaje == 'atras':
+            elif mensaje == 'atra':
                 self.hold_key(W, 0.25, message)
         self.same_name = False
 
@@ -90,7 +90,7 @@ class Bot_FG(commands.Bot):
         IZQ: moverme a la izquierda (move right) ________ 
         DER: moverme a la derecha (move left) _________ 
         ADE: Moverme adelante (forward) ______________ 
-        ATRAS: Moverme atras (backward) ______________ 
+        ATRA: Moverme atras (backward) ______________ 
         SALTA: Salto (jump) ____________________________ 
         DIVE: Salto hacia adelante (dive) _______________ 
         AGARRAR: Agarro al que tengo en frente (grab)\n''')
